@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #1a1b26;
+  --color-background-dark: #16161e;
+  --color-background-highlight: #292e42;
+  --color-background-card: #1f2335;
+  --color-foreground: #c0caf5;
+  --color-foreground-dark: #a9b1d6;
+  --color-foreground-muted: #5f6781;
+  --color-comment: #565f89;
+  --color-blue: #7aa2f7;
+  --color-cyan: #7dcfff;
+  --color-green: #9ece6a;
+  --color-magenta: #bb9af7;
+  --color-purple: #9d7cd8;
+  --color-orange: #ff9e64;
+  --color-yellow: #e0af68;
+  --color-red: #f7768e;
+  --color-teal: #1abc9c;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  body {
+    background-color: var(--bg);
+    font-family: Iosevka, ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  }
+
+  .font-serif {
+    font-family: "Playfair Display", serif;
+  }
+}
+
+@layer utilities {
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+      filter: blur(6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out both;
+  }
+}
