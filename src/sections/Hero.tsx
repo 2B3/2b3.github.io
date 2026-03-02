@@ -17,7 +17,8 @@ const Trail = ({ children }: TrailProps) => {
    const [show, setShow] = useState(false);
 
    useEffect(() => {
-      setShow(true);
+      const timer = setTimeout(() => setShow(true), 0);
+      return () => clearTimeout(timer);
    }, []);
 
    const trail = useTrail(items.length, {

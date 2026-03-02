@@ -18,7 +18,9 @@
     "motion-react": "^0.15.0-alpha.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "react-player": "^3.4.0",
     "react-router-dom": "^7.13.1",
+    "simple-icons": "^16.10.0",
     "tailwindcss": "^4.2.0"
   },
   "devDependencies": {
