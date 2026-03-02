@@ -8,9 +8,11 @@ export const Home = () => {
       <div className="min-h-screen bg-background overflow-x-hidden">
          <Navbar />
 
-         <Hero />
-         <About />
-         <Projects />
+         <main>
+            <Hero />
+            <About />
+            <Projects />
+         </main>
       </div>
    );
 };

@@ -27,7 +27,10 @@ export const Projects = () => {
    const [hovered, setHovered] = useState<number | null>(null);
 
    return (
-      <section className="relative min-h-screen flex flex-col justify-center max-w-6xl mx-auto px-8 py-20 animation-fade-in">
+      <section
+         id="projects"
+         className="relative min-h-screen flex flex-col justify-center max-w-6xl mx-auto px-8 py-20 animation-fade-in"
+      >
          <div className="text-center mx-auto max-w-3xl mb-16">
             <span className="text-foreground-dark text-xl tracking-wider uppercase animate-fade-in">
                Featured Work
