@@ -49,7 +49,7 @@ export const Hero = () => {
       <section className="relative min-h-screen flex flex-col justify-center max-w-3xl mx-auto px-8 py-20 animation-fade-in">
          <Trail>
             <h1 className="text-5xl md:text-7xl font-bold font-mono text-foreground leading-tight">
-               2B3
+               Douberg
             </h1>
 
             <span className="text-2xl text-foreground-dark tracking-wide">

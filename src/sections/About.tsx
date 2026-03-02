@@ -44,7 +44,7 @@ const getInTouch = [
    {
       icon: siDiscord,
       link: "https://discord.gg/cJfGa5HSWa",
-      name: "Discord Porfolio",
+      name: "Discord Portfolio",
       username: "Jobless People Portfolio",
    },
 

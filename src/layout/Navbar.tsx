@@ -19,7 +19,9 @@ export const Navbar = () => {
 
       window.addEventListener("scroll", handleScroll);
 
-      setIsScrolled(window.scrollY > 50);
+      const timer = setTimeout(() => setIsScrolled(window.scrollY > 50), 0);
+      clearTimeout(timer);
+
       return () => window.removeEventListener("scroll", handleScroll);
    }, []);
 
@@ -37,7 +39,7 @@ export const Navbar = () => {
                href="#"
                className="text-xl font-bold tracking-tight text-foreground-dark hover:text-blue transition-all duration-300"
             >
-               2B3
+               Douberg
             </a>
 
             {/* Desktop Nav */}
