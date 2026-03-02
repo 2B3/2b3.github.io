@@ -93,7 +93,7 @@ const getInTouch = [
 
 export const About = () => {
    return (
-      <section className="relative min-h-screen flex flex-col justify-center max-w-6xl mx-auto px-8 py-20 animation-fade-in">
+      <section className="relative min-h-screen flex flex-col justify-center max-w-6xl mx-auto px-8 py-20 animate-fade-in">
          <div className="text-center mx-auto max-w-3xl mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-foreground">
                About
@@ -113,7 +113,7 @@ export const About = () => {
                </p>
             </div>
 
-            <h2 className="text-4xl md:text-3xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-foreground-dark">
+            <h2 className="text-4xl md:text-3xl font-bold mt-4 mb-6 animation-delay-100 text-foreground-dark">
                Get in touch
             </h2>
 
@@ -121,7 +121,7 @@ export const About = () => {
                {getInTouch.map((area) => (
                   <a
                      href={area.link}
-                     className="group flex items-center gap-4 p-4 rounded-lg hover:bg-background-card transition-colors animation-fade-inanimation-fade-in duration-150"
+                     className="group flex items-center gap-4 p-4 rounded-lg hover:bg-background-card transition-colors duration-150"
                   >
                      <svg
                         className="w-6 h-6 text-foreground-dark"
