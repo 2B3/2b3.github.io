@@ -121,7 +121,7 @@ export const About = () => {
                {getInTouch.map((area) => (
                   <a
                      href={area.link}
-                     className="group flex items-center gap-4 p-4 rounded-lg hover:bg-background-card transition-colors duration-150"
+                     className="group flex items-center gap-4 p-4 rounded-lg hover:bg-background-card transition-colors animation-fade-inanimation-fade-in duration-150"
                   >
                      <svg
                         className="w-6 h-6 text-foreground-dark"
