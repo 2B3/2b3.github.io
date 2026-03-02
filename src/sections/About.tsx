@@ -87,7 +87,7 @@ const getInTouch = [
       icon: siSoundcloud,
       link: "https://soundcloud.com/kz1m46eafnig",
       name: "Soundcloud",
-      username: "",
+      username: "kz1m46eafnig",
    },
 ] as const;
 
