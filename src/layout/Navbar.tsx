@@ -4,8 +4,8 @@ import { X, Menu } from "lucide-react";
 const navLinks = [
    { href: "#about", label: "About" },
    { href: "#projects", label: "Projects" },
-   { href: "#experience", label: "Experience" },
-   { href: "#testimonials", label: "Testimonials" },
+   // { href: "#experience", label: "Experience" },
+   // { href: "#testimonials", label: "Testimonials" },
 ];
 
 export const Navbar = () => {
@@ -39,7 +39,7 @@ export const Navbar = () => {
                href="#"
                className="text-xl font-bold tracking-tight text-foreground-dark hover:text-blue transition-all duration-300"
             >
-               Douberg
+               2B3
             </a>
 
             {/* Desktop Nav */}

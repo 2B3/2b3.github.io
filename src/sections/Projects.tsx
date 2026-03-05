@@ -1,31 +1,11 @@
 import { ArrowUpRight } from "lucide-react";
-import { useState } from "react";
+import { MediaController, MediaPlayButton } from "media-chrome/react";
+import { siGithub } from "simple-icons";
+import ReactPlayer from "react-player";
 
-const tagLinks: { [key: string]: string } = {
-   react: "https://react.com",
-   typescript: "https://typescriptlang.org/",
-   nodejs: "https://nodejs.org",
-   ["react-luau"]: "https://react.luau.page/",
-   ["react-spring"]: "https://www.chrisc.dev/roact-spring",
-} as const;
-
-const projectsTable = [
-   {
-      title: "Sonner in roblox",
-      description:
-         "un toast para roblox que muestra notificaciones rapidas a los jugadores, con apilacion automatica.",
-      video: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
-      thumbnail:
-         "https://pbs.twimg.com/media/HCR2ifYXAAAJWQ2?format=jpg&name=small",
-      tags: ["React-luau", "React-spring"],
-      link: "https://github.com/2B3/sonner-roblox",
-      github: "#",
-   },
-] as const;
+import { ProjectList, TagList } from "../data/projects";
 
 export const Projects = () => {
-   const [hovered, setHovered] = useState<number | null>(null);
-
    return (
       <section
          id="projects"
@@ -41,21 +21,46 @@ export const Projects = () => {
          </div>
 
          <div className="grid md:grid-cols-2 gap-6">
-            {projectsTable.map((project, index) => (
+            {ProjectList.map((project, index) => (
                <div
                   key={index}
-                  onMouseEnter={() => setHovered(index)}
-                  onMouseLeave={() => setHovered(null)}
                   className="rounded-lg overflow-hidden animate-fade-in md:row-span-2 bg-background-card border border-foreground-muted/50 hover:border-foreground-muted transition-all hover:scale-101 duration-300 hover:shadow-[0_0_20px_rgba(122,162,247,0.1)]"
                >
-                  <video
-                     className="w-full aspect-video object-cover"
-                     controls={hovered == index}
-                     poster={project.thumbnail}
-                  >
-                     <source src={project.video} type="video/mp4" />
-                     Your browser does not support the video tag.
-                  </video>
+                  <MediaController className="w-full aspect-video object-cover relative group">
+                     <ReactPlayer
+                        className="w-full aspect-video object-cover"
+                        poster={project.thumbnail}
+                        src={project.video}
+                        style={{ aspectRatio: "16 / 9" }}
+                        playIcon={<></>}
+                        controls={true}
+                        width="100%"
+                        height="100%"
+                        light={
+                           <div className="relative w-full aspect-video overflow-hidden">
+                              <img
+                                 src={project.thumbnail}
+                                 alt={project.title}
+                                 className="w-full h-full object-cover transition-all duration-300 group-hover:blur-xs group-hover:opacity-85 group-hover:scale-105"
+                              />
+                              <div className="absolute inset-0 flex items-center justify-center space-x-2">
+                                 <MediaPlayButton className="bg-background/35 rounded-full backdrop-blur-xs p-2 group-hover:visible hover:scale-110 invisible transition-all duration-200" />
+                                 {project.github !== "#" && (
+                                    <a href={project.github}>
+                                       <svg
+                                          viewBox="0 0 24 24"
+                                          fill="currentColor"
+                                          className="bg-background/35 w-10 h-10 rounded-full backdrop-blur-xs p-2 group-hover:scale-110 transition-all duration-200 text-white"
+                                       >
+                                          <path d={siGithub.path} />
+                                       </svg>
+                                    </a>
+                                 )}
+                              </div>
+                           </div>
+                        }
+                     />
+                  </MediaController>
 
                   <div className="p-6 space-y-4">
                      <div className="flex items-start text-foreground-dark hover:text-foreground">
@@ -72,7 +77,7 @@ export const Projects = () => {
 
                      <div className="flex flex-wrap gap-2">
                         {project.tags.map((tag, tagIdx) => (
-                           <a href={tagLinks[tag.toLowerCase()]}>
+                           <a href={TagList[tag.toLowerCase()]}>
                               <span
                                  key={tagIdx}
                                  className="px-4 py-1.5 rounded-full bg-surface text-xs font-medium border border-foreground-muted/50 hover:border-foreground text-foreground-dark hover:border-primary/50 hover:text-foreground transition-all duration-300"
