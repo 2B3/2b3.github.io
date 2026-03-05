@@ -19,8 +19,7 @@ export const Navbar = () => {
 
       window.addEventListener("scroll", handleScroll);
 
-      const timer = setTimeout(() => setIsScrolled(window.scrollY > 50), 0);
-      clearTimeout(timer);
+      handleScroll();
 
       return () => window.removeEventListener("scroll", handleScroll);
    }, []);
