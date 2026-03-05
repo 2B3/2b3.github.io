@@ -46,11 +46,11 @@ export const Projects = () => {
                               <div className="absolute inset-0 flex items-center justify-center space-x-2">
                                  <MediaPlayButton className="bg-background/35 rounded-full backdrop-blur-xs p-2 group-hover:visible hover:scale-110 invisible transition-all duration-200" />
                                  {project.github !== "#" && (
-                                    <a href={project.github}>
+                                    <a href={project.github} className="group">
                                        <svg
                                           viewBox="0 0 24 24"
                                           fill="currentColor"
-                                          className="bg-background/35 w-10 h-10 rounded-full backdrop-blur-xs p-2 group-hover:scale-110 transition-all duration-200 text-white"
+                                          className="bg-background/35 w-11 h-11 rounded-full invisible group-hover:visible backdrop-blur-xs p-2 group-last:hover:scale-110 transition-all duration-200 text-white"
                                        >
                                           <path d={siGithub.path} />
                                        </svg>
