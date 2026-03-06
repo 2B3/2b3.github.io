@@ -1,12 +1,12 @@
 export const ProjectList = [
    {
-      title: "Sonner in roblox",
+      title: "Portfolio",
       description:
-         "un toast para roblox que muestra notificaciones rapidas a los jugadores, con apilacion automatica.",
-      video: "https://www.youtube.com/watch?v=YArwepWDhb0",
+         "My personal portfolio, a modern and uniquely styled template, designed to showcase my most creative work, Developed with cutting-edge web technologies, a responsive design, and a clean aesthetic, Using the Tokyo-Night color palette and a dedicated REST API.",
+      video: "#",
       thumbnail:
-         "https://pbs.twimg.com/media/HCR2ifYXAAAJWQ2?format=jpg&name=small",
-      tags: ["React-luau", "React-spring"],
+         "https://github.com/2B3/source/blob/main/Portfolio%20image.png?raw=true",
+      tags: ["React", "Django", "Tailwind", "TypeScript"],
       link: "https://github.com/2B3/sonner-roblox",
       github: "#",
    },
@@ -15,6 +15,8 @@ export const ProjectList = [
 export const TagList: { [key: string]: string } = {
    react: "https://react.com",
    nodejs: "https://nodejs.org",
+   django: "https://djangoproject.com",
+   tailwind: "https://tailwindcss.com/",
    typescript: "https://typescriptlang.org/",
    ["react-luau"]: "https://react.luau.page/",
    ["react-spring"]: "https://www.chrisc.dev/roact-spring",

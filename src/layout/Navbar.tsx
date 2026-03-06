@@ -48,9 +48,10 @@ export const Navbar = () => {
                      <a
                         href={link.href}
                         key={index}
-                        className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground text-foreground-dark rounded-full hover:bg-surface"
+                        className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground text-foreground-dark rounded-full hover:bg-surface group"
                      >
                         {link.label}
+                        <div className="top-full bg-foreground h-px group-hover:w-full w-0 transition-all duration-300"></div>
                      </a>
                   ))}
                </div>

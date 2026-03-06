@@ -26,41 +26,69 @@ export const Projects = () => {
                   key={index}
                   className="rounded-lg overflow-hidden animate-fade-in md:row-span-2 bg-background-card border border-foreground-muted/50 hover:border-foreground-muted transition-all hover:scale-101 duration-300 hover:shadow-[0_0_20px_rgba(122,162,247,0.1)]"
                >
-                  <MediaController className="w-full aspect-video object-cover relative group">
-                     <ReactPlayer
-                        className="w-full aspect-video object-cover"
-                        poster={project.thumbnail}
-                        src={project.video}
-                        style={{ aspectRatio: "16 / 9" }}
-                        playIcon={<></>}
-                        controls={true}
-                        width="100%"
-                        height="100%"
-                        light={
-                           <div className="relative w-full aspect-video overflow-hidden">
-                              <img
-                                 src={project.thumbnail}
-                                 alt={project.title}
-                                 className="w-full h-full object-cover transition-all duration-300 group-hover:blur-xs group-hover:opacity-85 group-hover:scale-105"
-                              />
-                              <div className="absolute inset-0 flex items-center justify-center space-x-2">
-                                 <MediaPlayButton className="bg-background/35 rounded-full backdrop-blur-xs p-2 group-hover:visible hover:scale-110 invisible transition-all duration-200" />
-                                 {project.github !== "#" && (
-                                    <a href={project.github} className="group">
-                                       <svg
-                                          viewBox="0 0 24 24"
-                                          fill="currentColor"
-                                          className="bg-background/35 w-11 h-11 rounded-full invisible group-hover:visible backdrop-blur-xs p-2 group-last:hover:scale-110 transition-all duration-200 text-white"
+                  {project.video !== "#" ? (
+                     <MediaController className="w-full aspect-video object-cover relative group">
+                        <ReactPlayer
+                           className="w-full aspect-video object-cover"
+                           poster={project.thumbnail}
+                           src={project.video}
+                           style={{ aspectRatio: "16 / 9" }}
+                           playIcon={<></>}
+                           controls={true}
+                           width="100%"
+                           height="100%"
+                           light={
+                              <div className="relative w-full aspect-video overflow-hidden">
+                                 <img
+                                    src={project.thumbnail}
+                                    alt={project.title}
+                                    className="w-full h-full object-cover transition-all duration-300 group-hover:blur-xs group-hover:opacity-85 group-hover:scale-105"
+                                 />
+                                 <div className="absolute inset-0 flex items-center justify-center space-x-2">
+                                    <MediaPlayButton className="bg-background/35 rounded-full backdrop-blur-xs p-2 group-hover:visible hover:scale-110 invisible transition-all duration-200" />
+                                    {project.github !== "#" && (
+                                       <a
+                                          href={project.github}
+                                          className="group"
                                        >
-                                          <path d={siGithub.path} />
-                                       </svg>
-                                    </a>
-                                 )}
+                                          <svg
+                                             viewBox="0 0 24 24"
+                                             fill="currentColor"
+                                             className="bg-background/35 w-11 h-11 rounded-full invisible group-hover:visible backdrop-blur-xs p-2 group-last:hover:scale-110 transition-all duration-200 text-white"
+                                          >
+                                             <path d={siGithub.path} />
+                                          </svg>
+                                       </a>
+                                    )}
+                                 </div>
                               </div>
-                           </div>
-                        }
-                     />
-                  </MediaController>
+                           }
+                        />
+                     </MediaController>
+                  ) : (
+                     <div
+                        className={`relative w-full aspect-video overflow-hidden ${project.github !== "#" ? "group" : ""}`}
+                     >
+                        <img
+                           src={project.thumbnail}
+                           alt={project.title}
+                           className="w-full h-full object-cover transition-all duration-300 group-hover:blur-xs group-hover:opacity-85 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 flex items-end justify-end p-5 space-x-2">
+                           {project.github !== "#" && (
+                              <a href={project.github}>
+                                 <svg
+                                    viewBox="0 0 24 24"
+                                    fill="currentColor"
+                                    className="bg-background/35 w-0 h-0 rounded-full invisible group-hover:visible group-hover:w-11 group-hover:h-11 hover:h-12 hover:w-12 backdrop-blur-xs p-2 group-last:hover:scale-110 transition-all duration-200 text-white"
+                                 >
+                                    <path d={siGithub.path} />
+                                 </svg>
+                              </a>
+                           )}
+                        </div>
+                     </div>
+                  )}
 
                   <div className="p-6 space-y-4">
                      <div className="flex items-start text-foreground-dark hover:text-foreground">
