@@ -50,7 +50,7 @@ export const Projects = () => {
                                  />
                                  <div className="absolute inset-0 flex items-center justify-center space-x-2">
                                     <MediaPlayButton className="bg-background/35 rounded-full backdrop-blur-xs p-2 group-hover:visible hover:scale-110 invisible transition-all duration-200" />
-                                    {project.github !== "#" && (
+                                    {project.github && (
                                        <a
                                           href={project.github}
                                           className="group"
@@ -71,7 +71,7 @@ export const Projects = () => {
                      </MediaController>
                   ) : (
                      <div
-                        className={`relative w-full aspect-video overflow-hidden ${project.github !== "#" ? "group" : ""}`}
+                        className={`relative w-full aspect-video overflow-hidden ${project.github ? "group" : ""}`}
                      >
                         <img
                            src={project.thumbnail}
@@ -79,7 +79,7 @@ export const Projects = () => {
                            className="w-full h-full object-cover"
                         />
                         <div className="absolute inset-0 flex items-end justify-end p-5 space-x-2">
-                           {project.github !== "#" && (
+                           {project.github && (
                               <a href={project.github}>
                                  <svg
                                     viewBox="0 0 24 24"

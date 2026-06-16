@@ -1,3 +1,13 @@
+type Project = {
+  title: string;
+  description: string;
+  video: string;
+  thumbnail: string;
+  tags: string[];
+  link: string;
+  github?: string;
+};
+
 export const ProjectList = [
    {
       title: "Personal Portfolio",
@@ -20,7 +30,7 @@ export const ProjectList = [
       link: "https://www.roblox.com/games/137822191499518",
       github: "https://github.com/2B3/browser-luau",
    },
-] as const;
+] as const satisfies Project[];
 
 export const TagList: { [key: string]: string } = {
    // Web Libs
