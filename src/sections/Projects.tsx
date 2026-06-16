@@ -5,6 +5,10 @@ import ReactPlayer from "react-player";
 
 import { ProjectList, TagList } from "../data/projects";
 
+const getTagLink = (url: string) => {
+   return url.replaceAll(" ", "-").toLowerCase();
+};
+
 export const Projects = () => {
    return (
       <section
@@ -72,7 +76,7 @@ export const Projects = () => {
                         <img
                            src={project.thumbnail}
                            alt={project.title}
-                           className="w-full h-full object-cover transition-all duration-300 group-hover:blur-xs group-hover:opacity-85 group-hover:scale-105"
+                           className="w-full h-full object-cover"
                         />
                         <div className="absolute inset-0 flex items-end justify-end p-5 space-x-2">
                            {project.github !== "#" && (
@@ -91,6 +95,7 @@ export const Projects = () => {
                   )}
 
                   <div className="p-6 space-y-4">
+                     {/* Title */}
                      <div className="flex items-start text-foreground-dark hover:text-foreground">
                         <a
                            href={project.link}
@@ -103,9 +108,10 @@ export const Projects = () => {
                         </a>
                      </div>
 
+                     {/* Tags */}
                      <div className="flex flex-wrap gap-2">
                         {project.tags.map((tag, tagIdx) => (
-                           <a href={TagList[tag.toLowerCase()]}>
+                           <a href={TagList[getTagLink(tag)]}>
                               <span
                                  key={tagIdx}
                                  className="px-4 py-1.5 rounded-full bg-surface text-xs font-medium border border-foreground-muted/50 hover:border-foreground text-foreground-dark hover:border-primary/50 hover:text-foreground transition-all duration-300"
@@ -116,6 +122,7 @@ export const Projects = () => {
                         ))}
                      </div>
 
+                     {/* Description */}
                      <p className="text-foreground-muted text-base">
                         {project.description}
                      </p>
